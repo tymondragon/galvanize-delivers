@@ -1,0 +1,31 @@
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+h5 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+.hero {
+  background-image: url("/Users/tymondragon/workspace/g89/q1/WEEK3/galvanize-delivers/img/hero.jpg");
+  background-repeat: no-repeat;
+  height: 60vh;
+  background-size: cover;
+  padding-top: 8%;
+}
+.main-text-font{
+  font-size: 25px;
+}
+.orange-accent {
+  color: #e27d60;
+}
+
+@media screen and (max-width: 992px) {
+  .hero {
+    padding-top: 20%;
+  }
+@media screen and (max-width: 600px) {
+  .hero {
+    padding-top: 30%;
+  }

@@ -2,27 +2,33 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8">
-  <title></title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <title>Order Galvanize Delivers</title>
 </head>
 
 <body>
   <nav class="teal lighten-2">
     <div class="nav-wrapper">
-      <a href="index.html" class="brand-logo">Galvanize Delivers</a>
+      <a id="mobile-logo" href="index.html" class="brand-logo ">Galvanize Delivers</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li class="active">Order Delivery</li>
+        <li class="active"><a href="order.html">Order Delivery</a></li>
       </ul>
     </div>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="order.html">Order Delivery</a></li>
+    </ul>
   </nav>
   <div class="row">
     <div class="container">
       <div class="row">
-        <div class="col s12 l6">
+        <div class="col s12  m6 l6">
           <h3>Menu</h3>
           <!--==============first Card=================-->
           <div class="row">
@@ -36,7 +42,7 @@
                   <p>$8.99</p>
                 </div>
                 <div class="card-action">
-                  <a href="#">This is a link</a>
+                  <a id="burger" href="#" onclick="M.toast({html: 'Royale With Cheese Added'})">Add to order</a>
                 </div>
               </div>
             </div>
@@ -50,11 +56,14 @@
                   <p>$11.99</p>
                 </div>
                 <div class="card-action">
-                  <a href="#">This is a link</a>
+                  <a id="arugula" href="#" onclick="M.toast({html: 'Arugula Pie Added'})">Add to order</a>
                 </div>
               </div>
             </div>
           </div>
+
+
+
           <div class="row">
             <div class="col s12 l6">
               <div class="card">
@@ -66,7 +75,7 @@
                   <p>$14.99</p>
                 </div>
                 <div class="card-action">
-                  <a href="#">This is a link</a>
+                  <a id="swine" href="#" onclick="M.toast({html: 'Smoked Swine Added'})">Add to order</a>
                 </div>
               </div>
             </div>
@@ -80,7 +89,7 @@
                   <p>$7.99</p>
                 </div>
                 <div class="card-action">
-                  <a href="#">This is a link</a>
+                  <a id="ice-cream" href="#" onclick="M.toast({html: 'Ice Cream Biscuit Added'})">Add to order</a>
                 </div>
               </div>
             </div>
@@ -95,11 +104,10 @@
 
 
 
-        <div class="col s12 l6">
+        <div class="col s12  m6 l6">
           <h3>Order</h3>
           <!-- table -->
-
-          <table class="striped">
+          <table>
             <thead>
               <tr>
                 <th>Item</th>
@@ -107,25 +115,10 @@
               </tr>
             </thead>
 
-            <tbody>
-              <tr>
-                <td>Royale With Cheese</td>
-                <td class="right-align">$8.99</td>
-              </tr>
-              <tr>
-                <td>Arugula Pie</td>
-                <td class="right-align">11.99</td>
-              </tr>
-              <tr>
-                <td>Smoked Swine</td>
-                <td class="right-align">$14.99</td>
-              </tr>
-              <tr>
-                <td>Ice Cream Biscuit</td>
-                <td class="right-align">$7.99</td>
-              </tr>
+            <tbody id="order">
             </tbody>
           </table>
+
           <div class="row right-align">
             <div class="col s3 offset-s3">
               <p>Subtotal</p>
@@ -135,11 +128,12 @@
             </div>
           </div>
           <div class="row right-align">
+
             <div class="col s3 offset-s3">
               <p>Tax</p>
             </div>
             <div class="col s3 offset-s3">
-              <p>$<span id="subtotal">0</span></p>
+              <p>$<span id="tax">0</span></p>
             </div>
           </div>
           <div class="row right-align">
@@ -147,9 +141,13 @@
               <p>Total</p>
             </div>
             <div class="col s3 offset-s3">
-              <p>$<span id="subtotal">0</span></p>
+              <p>$<span id="total">0</span></p>
             </div>
           </div>
+
+
+
+
           <div class="row valign-wrapper">
             <i class=" col s1 small material-icons orange-accent">account_circle</i>
             <div class="input-field col s11">
@@ -172,7 +170,7 @@
             </div>
           </div>
           <div class="row center-align">
-            <a class="waves-effect waves-light btn deep-orange lighten-2 orange-accent white-text"><i class="material-icons right white-text">cake</i>Place Order</a>
+            <a id="placeOrder" class="waves-effect waves-light btn deep-orange lighten-2 orange-accent white-text"><i class="material-icons right white-text">cake</i>Place Order</a>
           </div>
         </div>
       </div>
@@ -208,16 +206,8 @@
       </div>
     </div>
   </footer>
-  <!-- <ul class="sidenav" id="mobile-demo">
-       <li><a href="sass.html">Sass</a></li>
-       <li><a href="badges.html">Components</a></li>
-       <li><a href="collapsible.html">Javascript</a></li>
-       <li><a href="mobile.html">Mobile</a></li>
-     </ul> -->
-
-
-
-  <script type="text/javascript" src="main.js></script>
+     <script type="text/javascript" src="main.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </body>
 
 </html>

@@ -29,3 +29,7 @@ h5 {
   .hero {
     padding-top: 30%;
   }
+  @media screen and (max-width: 600px) {
+    #mobile-logo {
+      font-size: 150%;
+    }

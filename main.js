@@ -69,9 +69,15 @@ $("#placeOrder").click(function() {
   if($("#total").text() === "0"){
     console.log("yes")
     M.toast({html: 'Please add food before placing an order'})
+
+
   }
   else {
-    M.toast({html: 'Order Placed'})
+    M.toast({html: 'Order Placed Thank You!'})
+    $("#subtotal").text("0")
+    $("#tax").text("0")
+    $("#total").text("0")
+    $("#order").empty()
   }
 })
 });
